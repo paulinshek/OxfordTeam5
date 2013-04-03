@@ -11,7 +11,7 @@
 using Gadgeteer;
 using GTM = Gadgeteer.Modules;
 
-namespace GadgeteerApp1
+namespace BlindPeople
 {
     public partial class Program : Gadgeteer.Program
     {

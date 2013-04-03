@@ -10,7 +10,7 @@
     <!--This is an executable-->
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GadgeteerApp1</RootNamespace>
+    <RootNamespace>BlindPeople</RootNamespace>
     <AssemblyName>BlindPeople</AssemblyName>
     <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,11 +49,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Ranger.cs" />
     <Compile Include="Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SensorUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Gadgeteer">
