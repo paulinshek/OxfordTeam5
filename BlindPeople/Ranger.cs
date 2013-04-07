@@ -7,6 +7,11 @@ using GTI = Gadgeteer.Interfaces;
 
 namespace BlindPeople
 {
+    // The purpose of this class is to automatically perform range finds of
+    // multiple sensors so that the calling code can have the latest ranges
+    // at any point.
+    // You may have multiple instances of this class at one time however they
+    // should not try to use the same sensors simultaneously.
     class Ranger
     {
         // how many sensors are we using
@@ -28,47 +33,89 @@ namespace BlindPeople
         // the thread that constantly takes ranges in the background
         Thread rangingThread;
 
+        // is the rangingThread currently running or not
+        bool isRangingThreadRunning;
+        
+        // Initialises the ranger and starts ranging automatically.
+        // The arguemnts should be two arrays of equal length, the first being
+        // the socket on the mainboard used by that sensor and the second being
+        // the addrses used by that sensor.
+        // Once started, the sensors will be labelled 0,1,2,... in the order
+        // that they appear in these arrays
         public Ranger(int[] socketNumbers, byte[] addresses)
         {
             numSensors = addresses.Length;
             sensors = new GTI.I2CBus[numSensors];
             ranges = new int[numSensors];
 
+            // create the busses for communicating with the sensors
             for (int i = 0; i < numSensors; i++)
             {
                 GT.Socket socket = GT.Socket.GetSocket(socketNumbers[i], true, null, null);
                 sensors[i] = new GTI.I2CBus(socket, addresses[i], freq, null);
             }
 
+            // create the ranging thread and start it going
             rangingThread = new Thread(new ThreadStart(takeRanges));
             rangingThread.Start();
         }
 
-        // starts the ranging thead
+        // starts the ranging thead,
+        // safe to call multiple times
         public void startRanging()
         {
             Monitor.Exit(this);
+            isRangingThreadRunning = true;
         }
 
-        // stops the ranging thread
+        // stops the ranging thread,
+        // safe to call multiple times
         public void stopRanging()
         {
-            Monitor.Enter(this);
+            if (isRangingThreadRunning)
+            {
+                Monitor.Enter(this);
+                isRangingThreadRunning = false;
+            }
         }
 
-        // take all ranges and store the results in the ranges array
+        // return the most recent range from the specified sensor
+        // safe to call with an invalid index, but please don't
+        public int getRange(int i)
+        {
+            if (0 <= i && i < numSensors)
+            {
+                return ranges[i];
+            }
+            else
+            {
+                return 0;
+        }
+
+        // performs a range find on all sensors and store the results in the ranges array,
+        // should be run in a separate thread as it never terminates
         private void takeRanges()
         {
             while (true)
             {
+                // pausing and resuming the thread is controlled by this monitor,
+                // we can only enter if the controlling thread allows us
                 Monitor.Enter(this);
                 
+                // perform a range find of all sensors in sequence
                 for (int i = 0; i < numSensors; i++)
                 {
+                    // store the results in the ranges array, don't worry about
+                    // locking the array through a monitor, if someone does access
+                    // it midway and gets half of the previous ranges then it's no problem
                     ranges[i] = takeRange(sensors[i]);
+
+                    // sleep briefly between range finds, this is to allow ultrasonic waves
+                    // to dissipate, if not performed then we get erroneous ranges
                     Thread.Sleep(100);
                 }
 
+                // signal that we've finished for this pass
                 Monitor.Exit(this);
             }
         }
@@ -95,12 +142,6 @@ namespace BlindPeople
             }
 
             return range;
-        }
-
-        // return the most recent range from the specified sensor
-        public int getRange(int i)
-        {
-            return ranges[i];
         }
     }
 }

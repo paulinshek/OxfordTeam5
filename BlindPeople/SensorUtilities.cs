@@ -39,14 +39,17 @@ namespace BlindPeople
         {
             for (ushort n = 1; n <= 127; n++)
             {
+                // create a bus for the hypothetical sensor
                 GTI.I2CBus sensor = new GTI.I2CBus(GT.Socket.GetSocket(socket, true, null, null), n, 10, null);
 
+                // ask it to perform a range find
                 byte[] writeBuffer = new byte[1];
                 writeBuffer[0] = 81;
                 sensor.Write(writeBuffer, timeout);
 
+                // get the results
                 int range = 0;
-                DateTime end = System.DateTime.Now.AddMilliseconds(200);
+                DateTime end = System.DateTime.Now.AddMilliseconds(200);  // how long to wait for the sensor to respond
                 while (range == 0 && System.DateTime.Now < end)
                 {
                     // output is given as a 16bit integer,
@@ -56,6 +59,7 @@ namespace BlindPeople
                     range = readBuffer[0] * 256 + readBuffer[1];
                 }
 
+                // the range find timed out, so the sensor most likely doesn't exist
                 if (range != 0)
                 {
                     Debug.Print("Found sensor at address " + n.ToString());
