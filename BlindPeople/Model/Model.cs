@@ -12,6 +12,7 @@ namespace BlindPeople.DomainModel
         int numSensors;
 
         GyroWrapper gyro;
+        CompassWrapper compass;
         
         //the number of readings to keep for each sensor
         int maxReadings;
@@ -19,15 +20,21 @@ namespace BlindPeople.DomainModel
         //stores the most recent maxReadings readings for each ultrasonic sensor
         //(array of LimitedLists)
         LimitedList<int>[] sensorArray;
+
         //stores gryo readings
         LimitedList<Coordinate> gyroReadings;
+
+        //stores the *change* in compass angle
+        LimitedList<double> angleChanges;
+        double oldCompassReading;
         
-        public Model(Ranger ranger, GyroWrapper gyro)
+        public Model(Ranger ranger, GyroWrapper gyro, CompassWrapper compass)
         {
             this.ranger = ranger;
             numSensors = ranger.getNumSensors();
 
             this.gyro = gyro;
+            this.compass = compass;
 
             //initialise the array
             sensorArray = new LimitedList<int>[numSensors];
@@ -37,11 +44,13 @@ namespace BlindPeople.DomainModel
             }
 
             gyroReadings = new LimitedList<Coordinate>(maxReadings);
+            angleChanges = new LimitedList<double>(maxReadings);
 
             GT.Timer timer = new GT.Timer(250);
 
             timer.Tick += new GT.Timer.TickEventHandler(timer_Tick);
             timer.Start();
+            
         }
 
         void timer_Tick(GT.Timer timer)
@@ -64,6 +73,15 @@ namespace BlindPeople.DomainModel
         private void takeGyroMeasurement()
         {
             gyroReadings.add(gyro.getReading());
+        }
+
+        //takes a compass reading and subtracts the previous one from it
+        private void getAngleChange()
+        {
+            double newReading = compass.getReading();
+            double theta = newReading - oldCompassReading;
+            angleChanges.add(theta);
+            oldCompassReading = newReading;
         }
     }
 

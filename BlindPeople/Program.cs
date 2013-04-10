@@ -31,11 +31,13 @@ namespace BlindPeople
             byte[] addresses = { 1, 2 };
             ranger = new Ranger(sockets, addresses);
             GyroWrapper gyroWrapper = new GyroWrapper(gyro);
+            CompassWrapper compassWrapper = new CompassWrapper(compass);
 
             //Calibrate the gyro, need to ensure that sensor is not moving.
             //TODO: need some way of notifying the user.
             gyro.Calibrate();
-            Model model = new Model(ranger,gyroWrapper);
+
+            Model model = new Model(ranger,gyroWrapper,compassWrapper);
 
             Debug.Print("Initialisation Ended");
         }
