@@ -79,20 +79,5 @@
         </socketUses>
       </module>
     </gadgeteerModelHasGadgeteerHardware>
-    <gadgeteerModelHasGadgeteerHardware Id="ae31c8b1-2f36-483d-9337-4e44515f9cc9">
-      <module Id="ec6b625b-deb0-4606-b542-cf34251dc907" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Gyro&quot; Type=&quot;Gadgeteer.Modules.Seeed.Gyro&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\Seeed\Seeed .NET Gadgeteer SDK\Modules\Gyro\Resources\Image.jpg&quot; BoardWidth=&quot;17.2&quot; BoardHeight=&quot;32.2&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;&quot; UniqueId=&quot;c2140be2-a830-438e-a2ca-980157b4cd9b&quot; Manufacturer=&quot;Seeed&quot; Description=&quot;A Gyro module&quot; InstanceName=&quot;gyro&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.Seeed.Gyro&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;90&quot; Left=&quot;8.6&quot; Top=&quot;27.7&quot; TypesLabel=&quot;I&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;I&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="gyro" moduleType="Gadgeteer.Modules.Seeed.Gyro" moduleDefinitionId="c2140be2-a830-438e-a2ca-980157b4cd9b">
-        <socketUses>
-          <moduleHasSocketUses Id="90943eb7-6c8a-44ed-b477-909497e797b6">
-            <socketUse Id="ce4813af-eee5-4dff-8a7f-be112db5a14d" label="I">
-              <socket>
-                <socketUseReferencesSocket Id="340f184d-2831-41cc-ac75-8b515de1243c">
-                  <socketMoniker Id="e853c017-9cdf-415a-9bd7-ecd93427fc9d" />
-                </socketUseReferencesSocket>
-              </socket>
-            </socketUse>
-          </moduleHasSocketUses>
-        </socketUses>
-      </module>
-    </gadgeteerModelHasGadgeteerHardware>
   </gadgeteerHardware>
 </gadgeteerModel>

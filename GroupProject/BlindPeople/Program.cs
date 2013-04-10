@@ -12,10 +12,6 @@ using GT = Gadgeteer;
 using GTM = Gadgeteer.Modules;
 using GTI = Gadgeteer.Interfaces;
 using Gadgeteer.Modules.GHIElectronics;
-using Gadgeteer.Modules.Seeed;
-
-using BlindPeople.Sensors;
-using BlindPeople.DomainModel;
 
 namespace BlindPeople
 {
@@ -30,14 +26,19 @@ namespace BlindPeople
             int[] sockets = { 3, 3 };
             byte[] addresses = { 1, 2 };
             ranger = new Ranger(sockets, addresses);
-            GyroWrapper gyroWrapper = new GyroWrapper(gyro);
 
-            //Calibrate the gyro, need to ensure that sensor is not moving.
-            //TODO: need some way of notifying the user.
-            gyro.Calibrate();
-            Model model = new Model(ranger,gyroWrapper);
+            GT.Timer timer = new GT.Timer(250);
+            timer.Tick += new GT.Timer.TickEventHandler(printRanges);
+            timer.Start();
 
             Debug.Print("Initialisation Ended");
+        }
+
+        // take all ranges and store the results in the ranges array
+        private void printRanges(GT.Timer timer)
+        {
+            Debug.Print("Sensor 1 returns " + ranger.getRange(0));
+            Debug.Print("Sensor 2 returns " + ranger.getRange(1));
         }
     }
 }

@@ -18,7 +18,6 @@ namespace BlindPeople
         // GTM.Module definitions
         Gadgeteer.Modules.GHIElectronics.Breakout breakout;
         Gadgeteer.Modules.GHIElectronics.UsbClientDP usbClientDP;
-        Gadgeteer.Modules.Seeed.Gyro gyro;
 
         public static void Main()
         {
@@ -37,8 +36,6 @@ namespace BlindPeople
             usbClientDP = new GTM.GHIElectronics.UsbClientDP(1);
 		
             breakout = new GTM.GHIElectronics.Breakout(3);
-		
-            gyro = new GTM.Seeed.Gyro(10);
 
         }
     }
