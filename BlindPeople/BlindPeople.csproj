@@ -42,9 +42,9 @@
   <!-- Everything below here is custom to .NET MF / Gadgeteer template-->
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
+    <Compile Include="Model\LimitedList.cs" />
     <Compile Include="Sensors\Coordinate.cs" />
     <Compile Include="Sensors\GyroWrapper.cs" />
-    <Compile Include="Model\LimitedIntList.cs" />
     <Compile Include="Model\Model.cs" />
     <Compile Include="Program.generated.cs">
       <AutoGen>True</AutoGen>
@@ -60,10 +60,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sensors\SensorUtilities.cs" />
+    <Compile Include="WaveGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Gadgeteer">
       <SpecificVersion>false</SpecificVersion>
+    </Reference>
+    <Reference Include="Gadgeteer.SPI, Version=2.42.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="GHIElectronics.Gadgeteer.FEZSpider, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -71,10 +75,16 @@
     <Reference Include="GTM.GHIElectronics.Breakout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="GTM.GHIElectronics.Music, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="GTM.GHIElectronics.UsbClientDP, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="GTM.Seeed.Accelerometer, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="GTM.Seeed.Compass, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="GTM.Seeed.Gyro, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -97,7 +107,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
       <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
