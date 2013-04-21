@@ -28,8 +28,11 @@ namespace BlindPeople.DomainModel
         LimitedList<Coordinate> accelReadings;
 
         ArrayList modelListeners;
-        
 
+        //for reference: sensor readings are accurate from.. and to...
+        int rangerThreshold;
+        const int HighThreshold = 100;
+        const int LowThreshold = 30;
         
         public Model(int numSensors)
         {
@@ -50,7 +53,17 @@ namespace BlindPeople.DomainModel
         public void updateRange(int i, int range)
         {
             sensorArray[i].add(range);
-            //TODO: fire computations
+            //TODO: Check the next line is correct
+            Direction d = (i < 2) ? Direction.Left : Direction.Right;
+
+            if (range < rangerThreshold)
+            {
+                fireDistanceLessThanThreshold(d);
+            }
+            else
+            {
+                fireDistanceGreaterThanThreshold(d);
+            }
         }
 
         public void updateAccelerometer(Coordinate coord){
@@ -66,6 +79,22 @@ namespace BlindPeople.DomainModel
         public void calibrationFinished()
         {
             fireCalibrationFinished();
+        }
+
+        private void fireDistanceLessThanThreshold(Direction d)
+        {
+            foreach (ModelListener l in modelListeners)
+            {
+                l.distanceLessThanThreshold(d);
+            }
+        }
+
+        private void fireDistanceGreaterThanThreshold(Direction d)
+        {
+            foreach (ModelListener l in modelListeners)
+            {
+                l.distanceGreaterThanThreshold(d);
+            }
         }
 
         private void fireCalibrationStarted()
