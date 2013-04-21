@@ -43,6 +43,10 @@
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
     <Compile Include="Model\LimitedList.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Sensors\CompassWrapper.cs" />
     <Compile Include="Sensors\Coordinate.cs" />
     <Compile Include="Sensors\GyroWrapper.cs" />
     <Compile Include="Model\Model.cs" />
@@ -60,7 +64,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Sensors\SensorUtilities.cs" />
-    <Compile Include="WaveGenerator.cs" />
+    <Compile Include="Sound\TunesModule.cs" />
+    <Compile Include="Sound\WaveGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Gadgeteer">
@@ -112,6 +117,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\TinyCLR_DebugReferences.cache" />
     <None Include="Program.gadgeteer">
       <Generator>GadgeteerFileCodeGenerator</Generator>
       <LastGenOutput>Program.generated.cs</LastGenOutput>
@@ -124,5 +131,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
 </Project>

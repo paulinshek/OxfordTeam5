@@ -3,38 +3,37 @@ using System.Collections;
 using Microsoft.SPOT;
 using GT = Gadgeteer;
 using BlindPeople.Sensors;
+using Gadgeteer.Modules.Seeed;
 
 namespace BlindPeople.DomainModel
 {
     class Model
     {
-        Ranger ranger;
         int numSensors;
 
-        GyroWrapper gyro;
-        CompassWrapper compass;
+        //maps between sensors and their identities.
+        const int leftSide = 0;
+        const int leftForward = 1;
+        const int rightForward = 2;
+        const int rightSide = 3;
         
         //the number of readings to keep for each sensor
-        int maxReadings;
+        const int maxReadings = 10;
         
         //stores the most recent maxReadings readings for each ultrasonic sensor
         //(array of LimitedLists)
         LimitedList<int>[] sensorArray;
 
         //stores gryo readings
-        LimitedList<Coordinate> gyroReadings;
+        LimitedList<Coordinate> accelReadings;
 
-        //stores the *change* in compass angle
-        LimitedList<double> angleChanges;
-        double oldCompassReading;
+        ArrayList modelListeners;
         
-        public Model(Ranger ranger, GyroWrapper gyro, CompassWrapper compass)
-        {
-            this.ranger = ranger;
-            numSensors = ranger.getNumSensors();
 
-            this.gyro = gyro;
-            this.compass = compass;
+        
+        public Model(int numSensors)
+        {
+            this.numSensors = numSensors;
 
             //initialise the array
             sensorArray = new LimitedList<int>[numSensors];
@@ -43,47 +42,46 @@ namespace BlindPeople.DomainModel
                 sensorArray[i] = new LimitedList<int>(maxReadings);
             }
 
-            gyroReadings = new LimitedList<Coordinate>(maxReadings);
-            angleChanges = new LimitedList<double>(maxReadings);
-
-            GT.Timer timer = new GT.Timer(250);
-
-            timer.Tick += new GT.Timer.TickEventHandler(timer_Tick);
-            timer.Start();
-            
-        }
-
-        void timer_Tick(GT.Timer timer)
-        {   
-            updateRanges();
-            takeGyroMeasurement();
+            accelReadings = new LimitedList<Coordinate>(maxReadings);
 
         }
 
         // take all ranges and store the results in the ranges array
-        private void updateRanges()
+        public void updateRange(int i, int range)
         {
-            for (int i = 0; i < numSensors; i++)
+            sensorArray[i].add(range);
+            //TODO: fire computations
+        }
+
+        public void updateAccelerometer(Coordinate coord){
+            accelReadings.add(coord);
+            //TODO: fire computations
+        }
+
+        public void calibrationStarted()
+        {
+            fireCalibrationStarted();
+        }
+
+        public void calibrationFinished()
+        {
+            fireCalibrationFinished();
+        }
+
+        private void fireCalibrationStarted()
+        {
+            foreach (ModelListener l in modelListeners)
             {
-                sensorArray[i].add(ranger.getRange(i));
+                l.calibrationStarted();
             }
         }
 
-        //takes a gyro reading and adds to the LimitedList
-        private void takeGyroMeasurement()
+        private void fireCalibrationFinished()
         {
-            gyroReadings.add(gyro.getReading());
-        }
-
-        //takes a compass reading and subtracts the previous one from it
-        private void getAngleChange()
-        {
-            double newReading = compass.getReading();
-            double theta = newReading - oldCompassReading;
-            angleChanges.add(theta);
-            oldCompassReading = newReading;
+            foreach (ModelListener l in modelListeners)
+            {
+                l.calibrationFinished();
+            }
         }
     }
-
-    
 }

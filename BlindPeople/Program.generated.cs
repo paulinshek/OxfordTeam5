@@ -18,9 +18,7 @@ namespace BlindPeople
         // GTM.Module definitions
         Gadgeteer.Modules.GHIElectronics.Breakout breakout;
         Gadgeteer.Modules.GHIElectronics.UsbClientDP usbClientDP;
-        Gadgeteer.Modules.Seeed.Gyro gyro;
-        Gadgeteer.Modules.GHIElectronics.Music music;
-        Gadgeteer.Modules.Seeed.Compass compass;
+        Gadgeteer.Modules.Seeed.Accelerometer accelerometer;
 
         public static void Main()
         {
@@ -40,11 +38,7 @@ namespace BlindPeople
 		
             breakout = new GTM.GHIElectronics.Breakout(3);
 		
-            compass = new GTM.Seeed.Compass(4);
-		
-            music = new GTM.GHIElectronics.Music(6);
-		
-            gyro = new GTM.Seeed.Gyro(10);
+            accelerometer = new GTM.Seeed.Accelerometer(4);
 
         }
     }

@@ -79,43 +79,13 @@
         </socketUses>
       </module>
     </gadgeteerModelHasGadgeteerHardware>
-    <gadgeteerModelHasGadgeteerHardware Id="ae31c8b1-2f36-483d-9337-4e44515f9cc9">
-      <module Id="ec6b625b-deb0-4606-b542-cf34251dc907" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Gyro&quot; Type=&quot;Gadgeteer.Modules.Seeed.Gyro&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\Seeed\Seeed .NET Gadgeteer SDK\Modules\Gyro\Resources\Image.jpg&quot; BoardWidth=&quot;17.2&quot; BoardHeight=&quot;32.2&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;&quot; UniqueId=&quot;c2140be2-a830-438e-a2ca-980157b4cd9b&quot; Manufacturer=&quot;Seeed&quot; Description=&quot;A Gyro module&quot; InstanceName=&quot;gyro&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.Seeed.Gyro&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;90&quot; Left=&quot;8.6&quot; Top=&quot;27.7&quot; TypesLabel=&quot;I&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;I&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="gyro" moduleType="Gadgeteer.Modules.Seeed.Gyro" moduleDefinitionId="c2140be2-a830-438e-a2ca-980157b4cd9b">
+    <gadgeteerModelHasGadgeteerHardware Id="5f052fd7-94b0-407a-89bb-c7b74099b1e8">
+      <module Id="63ef2544-9b54-4d75-8005-9daa0d4e1a95" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Accelerometer&quot; Type=&quot;Gadgeteer.Modules.Seeed.Accelerometer&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\Seeed\Seeed .NET Gadgeteer SDK\Modules\Accelerometer\Resources\Image.jpg&quot; BoardWidth=&quot;17.2&quot; BoardHeight=&quot;32.2&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;&quot; UniqueId=&quot;b791f67e-00cf-4eea-8bac-976ca40ed1be&quot; Manufacturer=&quot;Seeed&quot; Description=&quot;A Accelerometer module&quot; InstanceName=&quot;accelerometer&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.Seeed.Accelerometer&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;90&quot; Left=&quot;8.6&quot; Top=&quot;27.7&quot; TypesLabel=&quot;I&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;I&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="accelerometer" moduleType="Gadgeteer.Modules.Seeed.Accelerometer" moduleDefinitionId="b791f67e-00cf-4eea-8bac-976ca40ed1be">
         <socketUses>
-          <moduleHasSocketUses Id="90943eb7-6c8a-44ed-b477-909497e797b6">
-            <socketUse Id="ce4813af-eee5-4dff-8a7f-be112db5a14d" label="I">
+          <moduleHasSocketUses Id="77713531-92af-42f1-a5e0-a91c5f7fac00">
+            <socketUse Id="04921aae-06b4-422c-9b9e-6aabc245c0f0" label="I">
               <socket>
-                <socketUseReferencesSocket Id="340f184d-2831-41cc-ac75-8b515de1243c">
-                  <socketMoniker Id="e853c017-9cdf-415a-9bd7-ecd93427fc9d" />
-                </socketUseReferencesSocket>
-              </socket>
-            </socketUse>
-          </moduleHasSocketUses>
-        </socketUses>
-      </module>
-    </gadgeteerModelHasGadgeteerHardware>
-    <gadgeteerModelHasGadgeteerHardware Id="a3c1e724-9121-4783-bcfd-9a7190b7df56">
-      <module Id="eaefc24d-4978-4950-8d17-1e74ca729e94" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Music&quot; Type=&quot;Gadgeteer.Modules.GHIElectronics.Music&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\GHI Electronics\GHI .NET Gadgeteer SDK\Modules\Music\Resources\Image.jpg&quot; BoardWidth=&quot;50&quot; BoardHeight=&quot;39&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;http://www.ghielectronics.com/catalog/product/317&quot; UniqueId=&quot;f026285c-59a9-405a-92b5-95d33ec0700e&quot; Manufacturer=&quot;GHI Electronics&quot; Description=&quot;A Music module&quot; InstanceName=&quot;music&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.GHIElectronics.Music&quot; /&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;Gadgeteer.SPI&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;180&quot; Left=&quot;45&quot; Top=&quot;19&quot; TypesLabel=&quot;S&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;S&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins /&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="music" moduleType="Gadgeteer.Modules.GHIElectronics.Music" moduleDefinitionId="f026285c-59a9-405a-92b5-95d33ec0700e">
-        <socketUses>
-          <moduleHasSocketUses Id="718c1ffb-654e-440a-9d10-5d9c037364e7">
-            <socketUse Id="9f58e6e6-a0b9-4133-bd0d-fb509ec89409" label="S">
-              <socket>
-                <socketUseReferencesSocket Id="daaf4aa9-f907-42b6-9a2c-9d1203b8ded2">
-                  <socketMoniker Id="bb0a07c7-463f-4f77-a81c-30b29ef50f63" />
-                </socketUseReferencesSocket>
-              </socket>
-            </socketUse>
-          </moduleHasSocketUses>
-        </socketUses>
-      </module>
-    </gadgeteerModelHasGadgeteerHardware>
-    <gadgeteerModelHasGadgeteerHardware Id="c788d344-c41c-4cd4-a6ed-6d2fdb2b5045">
-      <module Id="0d9ffd66-5951-461c-89b2-ec963413a037" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Compass&quot; Type=&quot;Gadgeteer.Modules.Seeed.Compass&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\Seeed\Seeed .NET Gadgeteer SDK\Modules\Compass\Resources\Image.jpg&quot; BoardWidth=&quot;17.2&quot; BoardHeight=&quot;32.2&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;&quot; UniqueId=&quot;1f4e3db5-e5ac-4957-9566-48f8382e23fb&quot; Manufacturer=&quot;Seeed&quot; Description=&quot;A Compass module&quot; InstanceName=&quot;compass&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.Seeed.Compass&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;90&quot; Left=&quot;8.6&quot; Top=&quot;27.7&quot; TypesLabel=&quot;I&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;I&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="compass" moduleType="Gadgeteer.Modules.Seeed.Compass" moduleDefinitionId="1f4e3db5-e5ac-4957-9566-48f8382e23fb">
-        <socketUses>
-          <moduleHasSocketUses Id="bdd337ca-8226-49f5-acab-92c1997cb6fd">
-            <socketUse Id="a4df6cee-eaf0-4231-882f-4555c6f1e03c" label="I">
-              <socket>
-                <socketUseReferencesSocket Id="aa04e4d7-ab50-4692-9197-61d6ed425bbf">
+                <socketUseReferencesSocket Id="163a7dfe-a64d-4cb1-8aba-88e00a5a57e4">
                   <socketMoniker Id="1e35f0ce-7ce4-47c5-a075-3dfbb58ad1f7" />
                 </socketUseReferencesSocket>
               </socket>

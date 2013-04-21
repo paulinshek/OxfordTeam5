@@ -14,6 +14,18 @@ namespace BlindPeople.Sensors
     // should not try to use the same sensors simultaneously.
     class Ranger
     {
+        //class containing distance reading and the identity of the ranger frem which it was taken from
+        public class SensorData : Microsoft.SPOT.EventArgs
+        {
+            public int id;
+            public int dist;
+            public SensorData(int id, int dist)
+            {
+                this.id = id;
+                this.dist = dist;
+            }
+        }
+
         // how many sensors are we using
         int numSensors;
 
@@ -36,6 +48,8 @@ namespace BlindPeople.Sensors
         // is the rangingThread currently running or not
         bool isRangingThreadRunning;
         
+        public event EventHandler MeasurementComplete;
+
         // Initialises the ranger and starts ranging automatically.
         // The arguemnts should be two arrays of equal length, the first being
         // the socket on the mainboard used by that sensor and the second being
@@ -81,7 +95,7 @@ namespace BlindPeople.Sensors
 
         // return the most recent range from the specified sensor
         // safe to call with an invalid index, but please don't
-        public int getRange(int i)
+        public int requestRange(int i)
         {
             if (0 <= i && i < numSensors)
             {
@@ -111,6 +125,10 @@ namespace BlindPeople.Sensors
                     // it midway and gets half of the previous ranges then it's no problem
                     ranges[i] = takeRange(sensors[i]);
 
+                    //raise an event
+                    var handler = MeasurementComplete;
+                    if (handler != null) handler(this, new SensorData(i,ranges[i]));
+                    
                     // sleep briefly between range finds, this is to allow ultrasonic waves
                     // to dissipate, if not performed then we get erroneous ranges
                     Thread.Sleep(100);
