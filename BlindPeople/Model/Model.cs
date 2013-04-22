@@ -53,7 +53,6 @@ namespace BlindPeople.DomainModel
         public void updateRange(int i, int range)
         {
             sensorArray[i].add(range);
-            //TODO: Check the next line is correct
             Direction d = (i < 2) ? Direction.Left : Direction.Right;
 
             if (range < rangerThreshold)
@@ -79,6 +78,11 @@ namespace BlindPeople.DomainModel
         public void calibrationFinished()
         {
             fireCalibrationFinished();
+        }
+
+        public void addModelListener(ModelListener l)
+        {
+            modelListeners.Add(l);
         }
 
         private void fireDistanceLessThanThreshold(Direction d)
