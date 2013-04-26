@@ -94,8 +94,9 @@ namespace BlindPeople.Sound
             }
 
             //grade is from 0 to 5
-            public void distanceLessThanThreshold(int grade)
+            public void distanceLessThanThreshold(Direction d, int grade)
             {
+                //TODO: implement direction in constructor
                 tunes.setBeepFreq(100 + (8 * grade));
 
                 if (tunes.getIsBeeping() == false)
@@ -104,7 +105,7 @@ namespace BlindPeople.Sound
                 }
             }
 
-            public void distanceGreaterThanThreshold()
+            public void distanceGreaterThanThreshold(Direction d)
             {
                 tunes.stopBeeping();
             }

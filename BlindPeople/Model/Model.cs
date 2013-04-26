@@ -29,7 +29,7 @@ namespace BlindPeople.DomainModel
 
         ArrayList modelListeners;
 
-        //for reference: sensor readings are accurate from.. and to...
+        //for reference: sensor readings are accurate from 20cm and to 2m
         int rangerThreshold;
         const int HighThreshold = 100;
         const int LowThreshold = 30;
