@@ -47,6 +47,8 @@ namespace BlindPeople.DomainModel
 
             accelReadings = new LimitedList<Coordinate>(maxReadings);
 
+            modelListeners = new ArrayList();
+
         }
 
         // take all ranges and store the results in the ranges array
