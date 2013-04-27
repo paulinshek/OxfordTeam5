@@ -5,7 +5,7 @@ namespace BlindPeople.DomainModel
 {
     // This is basically a queue with a fixed maximum length.
     // It is implemented using a circular array.
-    class LimitedList<T>
+    public class LimitedList<T>
     {
     	int latest;
     	int currentSize;

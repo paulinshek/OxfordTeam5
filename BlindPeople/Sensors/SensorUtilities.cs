@@ -6,7 +6,7 @@ using GTI = Gadgeteer.Interfaces;
 
 namespace BlindPeople.Sensors
 {
-    class SensorUtilities
+    public class SensorUtilities
     {
         // when communicating with the ultrasonic sensor, how long to wait before giving up if
         // we don't get a response. 100ms seems to be a good default value.

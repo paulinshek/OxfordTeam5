@@ -25,6 +25,7 @@ namespace BlindPeople.Sound
 
             isBeeping = false;
             beepFreq = 800;
+
         }
 
         // Plays a continuous tone from the tunes module at the given frequency (pitch) and volume.
@@ -87,21 +88,25 @@ namespace BlindPeople.Sound
         class TunesModelListener : ModelListener
         {
             TunesModule tunes;
+            Direction d;
 
-            public TunesModelListener(TunesModule tunes)
+            public TunesModelListener(TunesModule tunes, Direction d)
             {
                 this.tunes = tunes;
             }
 
             //grade is from 0 to 5
-            public void distanceLessThanThreshold(Direction d, int grade)
+            public void distanceLessThanThreshold(Direction dir, int grade)
             {
-                //TODO: implement direction in constructor
-                tunes.setBeepFreq(100 + (8 * grade));
-
-                if (tunes.getIsBeeping() == false)
+                if (d == dir)
                 {
-                    tunes.startBeeping(440, 0.05);
+                    tunes.setBeepFreq(100 + (8 * grade));
+
+                    if (tunes.getIsBeeping() == false)
+                    {
+                        tunes.startBeeping(440, 0.05);
+                    }
+
                 }
             }
 

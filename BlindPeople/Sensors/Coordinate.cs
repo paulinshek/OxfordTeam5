@@ -3,7 +3,7 @@ using Microsoft.SPOT;
 
 namespace BlindPeople.Sensors
 {
-    class Coordinate
+    public class Coordinate
     {
         public double x, y, z;
 

@@ -7,7 +7,7 @@ using Gadgeteer.Modules.Seeed;
 
 namespace BlindPeople.DomainModel
 {
-    class Model
+    public class Model
     {
         int numSensors;
 

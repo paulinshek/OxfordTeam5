@@ -2,10 +2,7 @@ using System;
 using Microsoft.SPOT;
 using BlindPeople.DomainModel;
 
-using System;
-using System.Collections;
 using System.Threading;
-using Microsoft.SPOT;
 using Microsoft.SPOT.Presentation;
 using Microsoft.SPOT.Presentation.Controls;
 using Microsoft.SPOT.Presentation.Media;
@@ -21,7 +18,7 @@ using Gadgeteer.Modules.Seeed;
 namespace BlindPeople.Sensors
 {
     //Class managing gyro, compass, and ranger
-    class Controller
+    public class Controller
     {
         Model model;
 

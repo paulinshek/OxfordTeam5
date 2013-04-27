@@ -12,7 +12,7 @@ namespace BlindPeople.Sensors
     // at any point.
     // You may have multiple instances of this class at one time however they
     // should not try to use the same sensors simultaneously.
-    class Ranger
+    public class Ranger
     {
         //class containing distance reading and the identity of the ranger frem which it was taken from
         public class SensorData : Microsoft.SPOT.EventArgs

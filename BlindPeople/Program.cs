@@ -33,8 +33,8 @@ namespace BlindPeople
             Ranger ranger = new Ranger(sockets, addresses);
             Controller controller = new Controller(model, accelerometer, ranger);
 
-            TunesModule leftTunes = new TunesModule(11);
-            TunesModule rightTunes = new TunesModule(8);
+            TunesModule leftTunes = new TunesModule(11, model);
+            TunesModule rightTunes = new TunesModule(8, model);
 
             Debug.Print("Initialisation Ended");
         }

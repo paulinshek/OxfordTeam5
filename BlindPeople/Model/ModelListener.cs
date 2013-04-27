@@ -4,13 +4,13 @@ using BlindPeople.Sound;
 
 namespace BlindPeople.DomainModel
 {
-    interface ModelListener
+    public interface ModelListener
     {
-        public void distanceLessThanThreshold(Direction d);
-        public void distanceGreaterThanThreshold(Direction d);
-        public void distanceIncreasing(Direction d);
-        public void distanceDecreasing(Direction d);
-        public void calibrationStarted();
-        public void calibrationFinished();
+        void distanceLessThanThreshold(Direction d);
+        void distanceGreaterThanThreshold(Direction d);
+        void distanceIncreasing(Direction d);
+        void distanceDecreasing(Direction d);
+        void calibrationStarted();
+        void calibrationFinished();
     }
 }
