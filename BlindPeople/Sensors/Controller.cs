@@ -12,8 +12,6 @@ using Gadgeteer.Networking;
 using GT = Gadgeteer;
 using GTM = Gadgeteer.Modules;
 using GTI = Gadgeteer.Interfaces;
-using GTM.GHIElectronics;
-using GTM.Seeed;
 
 
 namespace BlindPeople.Sensors
@@ -25,12 +23,23 @@ namespace BlindPeople.Sensors
 
         Ranger ranger;
 
-        public Controller(Model model, Ranger ranger)
+        GTM.GHIElectronics.Button thresholdButton;
+
+        public Controller(Model model, Ranger ranger, GTM.GHIElectronics.Button thresholdButton)
         {
             this.model = model;
 
             this.ranger = ranger;
             ranger.MeasurementComplete += new Microsoft.SPOT.EventHandler(ranger_MeasurementComplete);
+
+            this.thresholdButton = thresholdButton;
+            thresholdButton.ButtonPressed += new GTM.GHIElectronics.Button.ButtonEventHandler(thresholdButton_ButtonPressed);
+
+        }
+
+        void thresholdButton_ButtonPressed(GTM.GHIElectronics.Button sender, GTM.GHIElectronics.Button.ButtonState state)
+        {
+            model.changeThreshold();
         }
 
         public void calibrate()

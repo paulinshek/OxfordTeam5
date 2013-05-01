@@ -16,6 +16,7 @@ namespace BlindPeople
     public partial class Program : Gadgeteer.Program
     {
         // GTM.Module definitions
+        Gadgeteer.Modules.GHIElectronics.Button button;
 
         public static void Main()
         {
@@ -30,7 +31,9 @@ namespace BlindPeople
 
         private void InitializeModules()
         {   
-            // Initialize GTM.Modules and event handlers here.
+            // Initialize GTM.Modules and event handlers here.		
+            button = new GTM.GHIElectronics.Button(6);
+
         }
     }
 }

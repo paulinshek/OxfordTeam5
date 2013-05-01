@@ -9,7 +9,10 @@ namespace BlindPeople.Sound
         public delegate void Callback();
         private Callback callback;
 
+        //the amount of time between each tick
         private int interval;
+
+        //the time of the last tick
         private DateTime lastCall;
 
         private Timer timer;
@@ -21,9 +24,15 @@ namespace BlindPeople.Sound
             interval = 0;
             lastCall = DateTime.Now;
 
+            //timer doesn't start ticking
             timer = new Timer(tick, null, Timeout.Infinite, 0);
         }
 
+        //change the interval. if the timer is currently ticking then calcuate from the 
+        //time of the last tick, when the next tick is due (with the new interval).
+        //if is it past the new time, then then start start the first tick now
+        //otherwise, wait until the next tick is due and wait until then
+        //interval = 0 means stop beeping 
         public void change(int interval)
         {
             this.interval = interval;
@@ -40,11 +49,14 @@ namespace BlindPeople.Sound
             }
         }
 
+        //at each tick, call callback() and record the current time
         public void tick(Object obj)
         {
             callback();
 
+            //DateTime.Now is accurate up to 16 milliseconds
             lastCall = DateTime.Now;
+
         }
     }
 }

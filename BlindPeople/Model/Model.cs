@@ -3,7 +3,6 @@ using System.Collections;
 using Microsoft.SPOT;
 using GT = Gadgeteer;
 using BlindPeople.Sensors;
-using Gadgeteer.Modules.Seeed;
 
 namespace BlindPeople.DomainModel
 {
@@ -12,10 +11,10 @@ namespace BlindPeople.DomainModel
         int numSensors;
 
         //maps between sensors and their identities.
-        const int leftSide = 0;
-        const int leftForward = 1;
-        const int rightForward = 2;
-        const int rightSide = 3;
+        const int leftSide = 3;
+        const int leftForward = 2;
+        const int rightForward = 1;
+        const int rightSide = 0;
         
         //the number of readings to keep for each sensor
         const int maxReadings = 10;
@@ -26,10 +25,18 @@ namespace BlindPeople.DomainModel
 
         ArrayList modelListeners;
 
-        //for reference: sensor readings are accurate from 20cm and to 2m
+        //for reference: sensor readings are accurate from 20cm and to 4m
+
+        //there are two modes for the user: "HighThreshold" and "LowThreshold"
+        //it enables to user to ignore readings that are above 50cm, which might
+        //be useful if they are in a cramped environment such as a tunnel, or 
+        //somewhere 
         int currentThreshold;
-        const int HighThreshold = 100;
-        const int LowThreshold = 30;
+        const int HighThreshold = 400;
+        const int LowThreshold = 50;
+
+        //if the front sensor finds something within 50 cm then warn the user
+        const int frontWarning = 50;
         
         public Model(int numSensors)
         {
@@ -48,29 +55,39 @@ namespace BlindPeople.DomainModel
         }
 
         // take a range, store the results and inform any listeners
+        // treat range from front sensors as a special case - only warn the user if distance is 
+        //less than frontWarning
         public void updateRange(int i, int range)
         {
             sensorArray[i].add(range);
             Direction d = (i == leftSide) ? Direction.Left : (i == rightSide) ? Direction.Right : Direction.Front;
 
-            if (range < currentThreshold)
+            if (((d == Direction.Front) && (range < frontWarning)) || ((d != Direction.Front)&&(range<currentThreshold)))
             {
                 fireDistanceLessThanThreshold(d, range);
-            }
-            else
-            {
+            } else {
                 fireDistanceGreaterThanThreshold(d);
             }
         }
 
+        //calibration in the sensors has started
         public void calibrationStarted()
         {
             fireCalibrationStarted();
         }
 
+        //calibration in the sensors has finished
         public void calibrationFinished()
         {
             fireCalibrationFinished();
+        }
+
+        //switch form HighThreshold to LowThreshold and vice versa
+        public void changeThreshold()
+        {
+            if (currentThreshold == HighThreshold) currentThreshold = LowThreshold;
+            else currentThreshold = HighThreshold;
+
         }
 
         public void addModelListener(ModelListener l)

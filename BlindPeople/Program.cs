@@ -15,6 +15,7 @@ using GTI = Gadgeteer.Interfaces;
 using BlindPeople.Sensors;
 using BlindPeople.DomainModel;
 using BlindPeople.Sound;
+using Gadgeteer.Modules.GHIElectronics;
 
 namespace BlindPeople
 {
@@ -31,7 +32,7 @@ namespace BlindPeople
             int[] sockets = { 3, 3, 4, 4 };
             byte[] addresses = { 1, 2, 3, 4 };
             Ranger ranger = new Ranger(sockets, addresses);
-            Controller controller = new Controller(model, ranger);
+            Controller controller = new Controller(model, ranger, button);
 
             // setup the tunes modules
             TunesModule leftTunes = new TunesModule(11, model);
