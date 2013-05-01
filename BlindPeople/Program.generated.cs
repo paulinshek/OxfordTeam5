@@ -16,9 +16,6 @@ namespace BlindPeople
     public partial class Program : Gadgeteer.Program
     {
         // GTM.Module definitions
-        Gadgeteer.Modules.GHIElectronics.Breakout breakout;
-        Gadgeteer.Modules.GHIElectronics.UsbClientDP usbClientDP;
-        Gadgeteer.Modules.Seeed.Accelerometer accelerometer;
 
         public static void Main()
         {
@@ -33,13 +30,7 @@ namespace BlindPeople
 
         private void InitializeModules()
         {   
-            // Initialize GTM.Modules and event handlers here.		
-            usbClientDP = new GTM.GHIElectronics.UsbClientDP(1);
-		
-            breakout = new GTM.GHIElectronics.Breakout(3);
-		
-            accelerometer = new GTM.Seeed.Accelerometer(4);
-
+            // Initialize GTM.Modules and event handlers here.
         }
     }
 }

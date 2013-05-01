@@ -60,6 +60,8 @@
     <Compile Include="Sensors\SensorUtilities.cs" />
     <Compile Include="Sensors\Controller.cs" />
     <Compile Include="Model\ModelListener.cs" />
+    <Compile Include="Sound\BeepingTimer.cs" />
+    <Compile Include="Sound\TunesListener.cs" />
     <Compile Include="Sound\TunesModule.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,15 +69,6 @@
       <SpecificVersion>false</SpecificVersion>
     </Reference>
     <Reference Include="GHIElectronics.Gadgeteer.FEZSpider, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="GTM.GHIElectronics.Breakout, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="GTM.GHIElectronics.UsbClientDP, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="GTM.Seeed.Accelerometer, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.SPOT.Graphics" />

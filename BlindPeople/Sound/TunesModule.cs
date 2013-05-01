@@ -47,8 +47,5 @@ namespace BlindPeople.Sound
             System.Threading.Thread.Sleep(duration);
             stop();
         }
-
-      
-
     }
 }
