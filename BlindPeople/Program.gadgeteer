@@ -49,50 +49,5 @@
         </sockets>
       </mainboard>
     </gadgeteerModelHasGadgeteerHardware>
-    <gadgeteerModelHasGadgeteerHardware Id="4074ad7d-86cb-4bcb-97e7-a26ff2291f3e">
-      <module Id="b9a16837-f911-4d36-9925-2ff0a65c8ce4" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Breakout&quot; Type=&quot;Gadgeteer.Modules.GHIElectronics.Breakout&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\GHI Electronics\GHI .NET Gadgeteer SDK\Modules\Breakout\Resources\Image.jpg&quot; BoardWidth=&quot;25&quot; BoardHeight=&quot;11&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;http://www.ghielectronics.com/catalog/product/405&quot; UniqueId=&quot;7d6a06c1-2ca5-4a64-8459-cb6e89f16ec6&quot; Manufacturer=&quot;GHI Electronics&quot; Description=&quot;A Breakout module&quot; InstanceName=&quot;breakout&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.GHIElectronics.Breakout&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;270&quot; Left=&quot;12.9&quot; Top=&quot;7&quot; TypesLabel=&quot;&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;A&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;B&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;C&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;D&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;E&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;F&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;G&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;H&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;I&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;J&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;K&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;L&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;M&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;N&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;O&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;P&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;Q&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;R&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;S&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;T&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;U&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;V&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;W&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;X&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;Y&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;Z&lt;/Type&gt;&#xD;&#xA;        &lt;Type&gt;*&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins /&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="breakout" moduleType="Gadgeteer.Modules.GHIElectronics.Breakout" moduleDefinitionId="7d6a06c1-2ca5-4a64-8459-cb6e89f16ec6">
-        <socketUses>
-          <moduleHasSocketUses Id="709165a1-262e-4231-97ff-2ab722dd94c3">
-            <socketUse Id="d4c3e354-85c3-4328-b973-99596c09df5f">
-              <socket>
-                <socketUseReferencesSocket Id="b8128a80-9a7a-4e57-bf27-759ac38cc93b">
-                  <socketMoniker Id="d3523920-0247-4662-811e-6c502b661ec8" />
-                </socketUseReferencesSocket>
-              </socket>
-            </socketUse>
-          </moduleHasSocketUses>
-        </socketUses>
-      </module>
-    </gadgeteerModelHasGadgeteerHardware>
-    <gadgeteerModelHasGadgeteerHardware Id="11a3d153-6ac2-4bb0-ba47-40f2595289d5">
-      <module Id="56561d42-2617-4c8d-bfb6-db97cabe7b20" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;UsbClientDP&quot; Type=&quot;Gadgeteer.Modules.GHIElectronics.UsbClientDP&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\GHI Electronics\GHI .NET Gadgeteer SDK\Modules\UsbClientDP\Resources\Image.jpg&quot; BoardWidth=&quot;42&quot; BoardHeight=&quot;37&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;http://www.ghielectronics.com/catalog/product/280&quot; UniqueId=&quot;2cca78ca-5ed7-48ef-be12-a555836714be&quot; Manufacturer=&quot;GHI Electronics&quot; Description=&quot;A UsbClientDP module&quot; InstanceName=&quot;usbClientDP&quot; ModuleSuppliesPower=&quot;true&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.GHIElectronics.UsbClientDP&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;180&quot; Left=&quot;38.14&quot; Top=&quot;18.14&quot; TypesLabel=&quot;D&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;D&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;4&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;5&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;6&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;7&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="usbClientDP" moduleType="Gadgeteer.Modules.GHIElectronics.UsbClientDP" moduleDefinitionId="2cca78ca-5ed7-48ef-be12-a555836714be">
-        <socketUses>
-          <moduleHasSocketUses Id="d0d0ce8a-9fea-4de3-8d3f-051e723cefbc">
-            <socketUse Id="9de98762-1dee-4c73-b196-b63006bac513" label="D">
-              <socket>
-                <socketUseReferencesSocket Id="b5b6906c-04ca-422b-8491-60932de0d5ff">
-                  <socketMoniker Id="0377036d-234f-4fec-962d-ac890ef7523b" />
-                </socketUseReferencesSocket>
-              </socket>
-            </socketUse>
-          </moduleHasSocketUses>
-        </socketUses>
-      </module>
-    </gadgeteerModelHasGadgeteerHardware>
-    <gadgeteerModelHasGadgeteerHardware Id="5f052fd7-94b0-407a-89bb-c7b74099b1e8">
-      <module Id="63ef2544-9b54-4d75-8005-9daa0d4e1a95" cachedDefinition="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&#xD;&#xA;&lt;ModuleDefinition xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; Name=&quot;Accelerometer&quot; Type=&quot;Gadgeteer.Modules.Seeed.Accelerometer&quot; HardwareVersion=&quot;1.0&quot; Image=&quot;C:\Program Files (x86)\Seeed\Seeed .NET Gadgeteer SDK\Modules\Accelerometer\Resources\Image.jpg&quot; BoardWidth=&quot;17.2&quot; BoardHeight=&quot;32.2&quot; MinimumGadgeteerCoreVersion=&quot;2.42.500&quot; HelpUrl=&quot;&quot; UniqueId=&quot;b791f67e-00cf-4eea-8bac-976ca40ed1be&quot; Manufacturer=&quot;Seeed&quot; Description=&quot;A Accelerometer module&quot; InstanceName=&quot;accelerometer&quot; ModuleSuppliesPower=&quot;false&quot;&gt;&#xD;&#xA;  &lt;ProvidedSockets /&gt;&#xD;&#xA;  &lt;Assemblies&gt;&#xD;&#xA;    &lt;Assembly MFVersion=&quot;4.2&quot; Name=&quot;GTM.Seeed.Accelerometer&quot; /&gt;&#xD;&#xA;  &lt;/Assemblies&gt;&#xD;&#xA;  &lt;LibrariesProvided /&gt;&#xD;&#xA;  &lt;Sockets&gt;&#xD;&#xA;    &lt;Socket Orientation=&quot;90&quot; Left=&quot;8.6&quot; Top=&quot;27.7&quot; TypesLabel=&quot;I&quot; ConstructorOrder=&quot;1&quot; Optional=&quot;false&quot;&gt;&#xD;&#xA;      &lt;Types&gt;&#xD;&#xA;        &lt;Type&gt;I&lt;/Type&gt;&#xD;&#xA;      &lt;/Types&gt;&#xD;&#xA;      &lt;Pins&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;false&quot;&gt;3&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;8&lt;/Pin&gt;&#xD;&#xA;        &lt;Pin Shared=&quot;true&quot;&gt;9&lt;/Pin&gt;&#xD;&#xA;      &lt;/Pins&gt;&#xD;&#xA;    &lt;/Socket&gt;&#xD;&#xA;  &lt;/Sockets&gt;&#xD;&#xA;  &lt;ExtraLibrariesRequired /&gt;&#xD;&#xA;&lt;/ModuleDefinition&gt;" name="accelerometer" moduleType="Gadgeteer.Modules.Seeed.Accelerometer" moduleDefinitionId="b791f67e-00cf-4eea-8bac-976ca40ed1be">
-        <socketUses>
-          <moduleHasSocketUses Id="77713531-92af-42f1-a5e0-a91c5f7fac00">
-            <socketUse Id="04921aae-06b4-422c-9b9e-6aabc245c0f0" label="I">
-              <socket>
-                <socketUseReferencesSocket Id="163a7dfe-a64d-4cb1-8aba-88e00a5a57e4">
-                  <socketMoniker Id="1e35f0ce-7ce4-47c5-a075-3dfbb58ad1f7" />
-                </socketUseReferencesSocket>
-              </socket>
-            </socketUse>
-          </moduleHasSocketUses>
-        </socketUses>
-      </module>
-    </gadgeteerModelHasGadgeteerHardware>
   </gadgeteerHardware>
 </gadgeteerModel>

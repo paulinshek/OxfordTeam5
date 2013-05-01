@@ -11,12 +11,10 @@ using Gadgeteer.Networking;
 using GT = Gadgeteer;
 using GTM = Gadgeteer.Modules;
 using GTI = Gadgeteer.Interfaces;
-using Gadgeteer.Modules.GHIElectronics;
 
 using BlindPeople.Sensors;
 using BlindPeople.DomainModel;
 using BlindPeople.Sound;
-using Gadgeteer.Modules.Seeed;
 
 namespace BlindPeople
 {
@@ -26,15 +24,26 @@ namespace BlindPeople
         {
             Debug.Print("Program Started");
 
-            Model model = new Model(2);
+            // create the model
+            Model model = new Model(4);
 
-            int[] sockets = { 3, 3 };
-            byte[] addresses = { 1, 2 };
+            // setup the sensors
+            int[] sockets = { 3, 3, 4, 4 };
+            byte[] addresses = { 1, 2, 3, 4 };
             Ranger ranger = new Ranger(sockets, addresses);
-            Controller controller = new Controller(model, accelerometer, ranger);
+            Controller controller = new Controller(model, ranger);
 
+            // setup the tunes modules
             TunesModule leftTunes = new TunesModule(11, model);
             TunesModule rightTunes = new TunesModule(8, model);
+            TunesListener tunesListener = new TunesListener(leftTunes, rightTunes);
+            model.addModelListener(tunesListener);
+
+            // calibrate everything
+            controller.calibrate();
+
+            // start ranging
+            ranger.startRanging();
 
             Debug.Print("Initialisation Ended");
         }

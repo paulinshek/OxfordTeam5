@@ -24,13 +24,10 @@ namespace BlindPeople.DomainModel
         //(array of LimitedLists)
         LimitedList<int>[] sensorArray;
 
-        //stores gryo readings
-        LimitedList<Coordinate> accelReadings;
-
         ArrayList modelListeners;
 
         //for reference: sensor readings are accurate from 20cm and to 2m
-        int rangerThreshold;
+        int currentThreshold;
         const int HighThreshold = 100;
         const int LowThreshold = 30;
         
@@ -45,31 +42,25 @@ namespace BlindPeople.DomainModel
                 sensorArray[i] = new LimitedList<int>(maxReadings);
             }
 
-            accelReadings = new LimitedList<Coordinate>(maxReadings);
-
             modelListeners = new ArrayList();
 
+            currentThreshold = HighThreshold;
         }
 
-        // take all ranges and store the results in the ranges array
+        // take a range, store the results and inform any listeners
         public void updateRange(int i, int range)
         {
             sensorArray[i].add(range);
-            Direction d = (i < 2) ? Direction.Left : Direction.Right;
+            Direction d = (i == leftSide) ? Direction.Left : (i == rightSide) ? Direction.Right : Direction.Front;
 
-            if (range < rangerThreshold)
+            if (range < currentThreshold)
             {
-                fireDistanceLessThanThreshold(d);
+                fireDistanceLessThanThreshold(d, range);
             }
             else
             {
                 fireDistanceGreaterThanThreshold(d);
             }
-        }
-
-        public void updateAccelerometer(Coordinate coord){
-            accelReadings.add(coord);
-            //TODO: fire computations
         }
 
         public void calibrationStarted()
@@ -87,11 +78,11 @@ namespace BlindPeople.DomainModel
             modelListeners.Add(l);
         }
 
-        private void fireDistanceLessThanThreshold(Direction d)
+        private void fireDistanceLessThanThreshold(Direction d, int distance)
         {
             foreach (ModelListener l in modelListeners)
             {
-                l.distanceLessThanThreshold(d);
+                l.distanceLessThanThreshold(d, distance);
             }
         }
 

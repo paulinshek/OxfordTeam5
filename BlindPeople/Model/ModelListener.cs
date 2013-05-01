@@ -6,10 +6,10 @@ namespace BlindPeople.DomainModel
 {
     public interface ModelListener
     {
-        //called when the distance has changed to less then the threshold
-        void distanceLessThanThreshold(Direction d);
+        //called when a range is taken that is less than the threshold
+        void distanceLessThanThreshold(Direction d, int distance);
 
-        //called when the distance has changed from below to above the threshold
+        //called when a range is taken that is greater than the threshold
         void distanceGreaterThanThreshold(Direction d);
         
         //called when the calibration of the sensors has started

@@ -69,8 +69,10 @@ namespace BlindPeople.Sensors
                 sensors[i] = new GTI.I2CBus(socket, addresses[i], freq, null);
             }
 
-            // create the ranging thread and start it going
+            // create the ranging thread but don't start it ranging
             rangingThread = new Thread(new ThreadStart(takeRanges));
+            isRangingThreadRunning = false;
+            Monitor.Enter(this);
             rangingThread.Start();
         }
 

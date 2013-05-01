@@ -59,8 +59,8 @@ namespace BlindPeople.Sound
         public void distanceGreaterThanThreshold(Direction d)
         {
             if (d == Direction.Left) timerL.change(0);
-            if (d == Direction.Right) timerL.change(0);
-            if (d == Direction.Front) timerL.change(0);
+            if (d == Direction.Right) timerR.change(0);
+            if (d == Direction.Front) timerF.change(0);
         }
 
         public void calibrationStarted()
