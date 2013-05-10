@@ -21,7 +21,7 @@ namespace BlindPeople.DomainModel
         
         //stores the most recent maxReadings readings for each ultrasonic sensor
         //(array of LimitedLists)
-        LimitedList<int>[] sensorArray;
+        LimitedList[] sensorArray;
 
         ArrayList modelListeners;
 
@@ -34,19 +34,16 @@ namespace BlindPeople.DomainModel
         int currentThreshold;
         const int HighThreshold = 400;
         const int LowThreshold = 50;
-
-        //if the front sensor finds something within 50 cm then warn the user
-        const int frontWarning = 50;
         
         public Model(int numSensors)
         {
             this.numSensors = numSensors;
 
             //initialise the array
-            sensorArray = new LimitedList<int>[numSensors];
+            sensorArray = new LimitedList[numSensors];
             for (int i = 0; i < numSensors; i++)
             {
-                sensorArray[i] = new LimitedList<int>(maxReadings);
+                sensorArray[i] = new LimitedList(maxReadings);
             }
 
             modelListeners = new ArrayList();
@@ -62,7 +59,7 @@ namespace BlindPeople.DomainModel
             sensorArray[i].add(range);
             Direction d = (i == leftSide) ? Direction.Left : (i == rightSide) ? Direction.Right : Direction.Front;
 
-            if (((d == Direction.Front) && (range < frontWarning)) || ((d != Direction.Front)&&(range<currentThreshold)))
+            if (range < currentThreshold)
             {
                 fireDistanceLessThanThreshold(d, range);
             } else {

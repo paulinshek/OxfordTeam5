@@ -47,7 +47,6 @@ namespace BlindPeople.Sensors
             //Calibrate the accelerometer, need to ensure that sensor is not moving.
             //Give the user some warning time, before actually calibrating
             model.calibrationStarted();
-            Thread.Sleep(250);
             model.calibrationFinished();
         }
 

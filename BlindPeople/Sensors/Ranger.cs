@@ -133,7 +133,7 @@ namespace BlindPeople.Sensors
                     
                     // sleep briefly between range finds, this is to allow ultrasonic waves
                     // to dissipate, if not performed then we get erroneous ranges
-                    Thread.Sleep(100);
+                    Thread.Sleep(150);
                 }
 
                 // signal that we've finished for this pass
